@@ -13,6 +13,10 @@
     box-sizing:border-box;
 }
 
+[hidden] {
+    display:none !important;
+}
+
 html {
     scroll-padding-top:6rem;
 }
@@ -34,7 +38,7 @@ a:hover {
     text-decoration-thickness:2px;
 }
 
-a:focus-visible,summary:focus-visible {
+a:focus-visible,summary:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible {
     outline:3px solid var(--accent);
     outline-offset:5px;
     border-radius:3px;
@@ -178,6 +182,24 @@ h3 {
 
 .button:hover {
     background:#82e5df;
+}
+
+button.button {
+    border:0;
+    font-family:inherit;
+    line-height:1.65;
+    cursor:pointer;
+}
+
+.button-secondary {
+    background:transparent;
+    color:var(--accent);
+    box-shadow:inset 0 0 0 1px var(--accent);
+}
+
+.button-secondary:hover {
+    background:#123536;
+    color:var(--text);
 }
 
 .text-link {
@@ -569,6 +591,218 @@ summary {
     max-width:850px;
 }
 
+.opportunities-main {
+    padding-top:2.5rem;
+}
+
+.page-heading {
+    padding-top:3rem;
+}
+
+.page-heading h1 {
+    max-width:950px;
+    margin-bottom:1.25rem;
+    overflow-wrap:anywhere;
+}
+
+.page-actions {
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:1.25rem;
+}
+
+.position-list {
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:1.25rem;
+    list-style:none;
+    padding:0;
+    margin:0;
+}
+
+.position-card,.submission-callout {
+    padding:1.6rem;
+    border:1px solid var(--line);
+    border-radius:7px;
+    background:var(--panel);
+    min-width:0;
+    overflow-wrap:anywhere;
+}
+
+.position-card h3 {
+    font-size:1.3rem;
+    line-height:1.4;
+}
+
+.position-card h3 a {
+    color:var(--text);
+    text-decoration:none;
+}
+
+.position-card h3 a:hover {
+    color:var(--accent);
+}
+
+.position-card .eyebrow {
+    margin-bottom:.85rem;
+}
+
+.position-host,.position-status {
+    color:var(--accent);
+    font-size:.9rem;
+}
+
+.position-excerpt,.position-copy,.submission-callout p {
+    color:var(--muted);
+}
+
+.position-deadline {
+    font-size:.8rem;
+    color:var(--muted);
+    margin-bottom:0;
+}
+
+.closed-positions {
+    margin-top:2rem;
+    overflow-wrap:anywhere;
+}
+
+.closed-positions ul {
+    padding-left:1.25rem;
+}
+
+.closed-positions li {
+    margin-top:.8rem;
+}
+
+.position-facts {
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:1rem;
+    margin:2rem 0 3rem;
+}
+
+.position-facts > div {
+    padding:1.2rem;
+    border:1px solid var(--line);
+    border-radius:7px;
+    background:var(--panel);
+    min-width:0;
+    overflow-wrap:anywhere;
+}
+
+.position-facts dt {
+    color:var(--muted);
+    font-size:.8rem;
+    margin-bottom:.4rem;
+}
+
+.position-facts dd {
+    margin:0;
+}
+
+.position-section {
+    margin-top:2.5rem;
+    max-width:850px;
+}
+
+.position-section h2,.submission-callout h2 {
+    font-size:1.5rem;
+}
+
+.position-copy {
+    white-space:pre-line;
+    overflow-wrap:anywhere;
+}
+
+.position-checked {
+    margin-top:3rem;
+    max-width:850px;
+}
+
+.submission-callout p:last-child {
+    margin-bottom:0;
+}
+
+.position-form {
+    margin-top:3rem;
+}
+
+.form-intro,.form-status {
+    color:var(--muted);
+    font-size:.9rem;
+}
+
+.form-status {
+    margin-top:1.5rem;
+}
+
+.position-form fieldset {
+    min-width:0;
+    padding:1.6rem;
+    margin:2rem 0;
+    border:1px solid var(--line);
+    border-radius:7px;
+    background:var(--panel);
+}
+
+.position-form legend {
+    padding-inline:.5rem;
+    max-width:100%;
+    font-size:1.15rem;
+    font-weight:600;
+}
+
+.form-grid {
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:1.4rem;
+}
+
+.form-field {
+    display:flex;
+    flex-direction:column;
+    gap:.45rem;
+    min-width:0;
+}
+
+.field-wide {
+    grid-column:1 / -1;
+}
+
+.form-field label {
+    font-size:.9rem;
+    font-weight:600;
+}
+
+.form-field small,.optional-label {
+    color:var(--muted);
+    font-size:.78rem;
+    font-weight:400;
+}
+
+.form-field input,.form-field select,.form-field textarea {
+    width:100%;
+    min-width:0;
+    padding:.75rem;
+    border:1px solid var(--line);
+    border-radius:4px;
+    background:var(--bg);
+    color:var(--text);
+    font:inherit;
+    line-height:1.45;
+}
+
+.form-field textarea {
+    resize:vertical;
+    min-height:130px;
+}
+
+.form-field input:disabled {
+    opacity:.5;
+}
+
 @media(max-width:900px) {
     .team-grid {
         grid-template-columns:repeat(2,minmax(0,1fr));
@@ -638,6 +872,21 @@ summary {
     }
     .profile-header h1 {
         font-size:2rem;
+    }
+    .opportunities-main {
+        padding-top:1.75rem;
+    }
+    .page-heading {
+        padding-top:2rem;
+    }
+    .position-list,.position-facts,.form-grid {
+        grid-template-columns:1fr;
+    }
+    .position-card,.submission-callout,.position-form fieldset {
+        padding:1.25rem;
+    }
+    .page-actions {
+        gap:1rem;
     }
     .publication {
         padding:1.2rem;

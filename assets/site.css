@@ -387,6 +387,11 @@ button.button {
     margin-bottom:0;
 }
 
+.member-website {
+    margin-top:1rem;
+    font-size:.82rem;
+}
+
 .section-description {
     max-width:800px;
     color:var(--muted);
@@ -545,6 +550,13 @@ button.button {
     color:var(--muted);
     font-size:1.05rem;
     margin-bottom:1.25rem;
+}
+
+.profile-links {
+    display:flex;
+    align-items:center;
+    flex-wrap:wrap;
+    gap:1rem;
 }
 
 .research-interests .intro {
